@@ -1,55 +1,73 @@
-# Pineapple
+## Voyager
 
-Pineapple is a minimalistic [Jekyll](https://jekyllrb.com) portfolio theme that focuses on putting your projects in the spotlight.
+Just another jekyll theme. Demo: <http://redvi.github.io/voyager>
 
-![Pineapple screenshot](https://user-images.githubusercontent.com/9528895/38713105-6dda8a74-3ec7-11e8-8062-8aa6cf24c795.jpg)
+### Feathures:
 
-See Pineapple in action on the [demo site](https://arnolds.io/pineapple/).
+All HTML files are compressed (see `_layouts/compress.html`).
 
-## Contents
+**Post**
 
-- [Setup](#setup)
-- [Deploy to Github Pages](#deploy-to-github-pages)
-- [Creating projects](#creating-projects)
-- [Resources](#resources)
-- [License](#license)
-
-## Setup
-
-Install dependencies:
+All post settings can be changed. Example:
 
 ```
-$ gem install jekyll bundler
+---
+layout: post
+bg: '2016/background.jpg'
+title: "Post Heading"
+crawlertitle: "page title"
+summary: "post description"
+date: 2016-06-29
+tags : ['front-end']
+slug: post-url
+author: "Author"
+categories: posts
+---
 ```
 
-Pulldown the project:
+`bg` is a path to background of your article. By default backgrounds are placed in the `assets/images` directory.
+
+**Page**
+
+If page contains `active` tag, it will be show on site menu.
 
 ```
-$ git clone git@github.com:arnolds/pineapple.git
-$ cd pineapple
+---
+layout: page
+title: "About"
+permalink: /about/
+active: about
+---
 ```
 
-Start Jekyll:
+**Archive**
+
+Archive page is sorting posts by tags. No more than one tag in one post.
+
+Good:
 
 ```
-$ jekyll serve
+tags : ['front-end']
 ```
 
-Browse to http://127.0.0.1:4000/pineapple/ for some Pineapple goodness.
+Bad:
 
-## Deploy to Github Pages
+```
+tags : ['front-end', 'jekyll']
+```
 
-1. Fork this repository, then rename the repository to yourgithubusername.github.io.
-2. Update user configuration values in `_config.yml`, and also set `baseurl: ""`.
+Don't forget to change `_config.yml`.
 
-## Creating projects
+**Relative paths**
 
-Projects are created as `.md` documents within the `_posts/projects` directory. They follow the same naming conventions as regular [Jekyll posts](https://jekyllrb.com/docs/posts/). Pineapple comes with four example projects, which you should use as a guide for creating your own e.g. [Red Pineapple](_posts/projects/2017-04-01-redpineapple.md).
+If your blog is not in the root directory, you can include images with a relative path. For example:
 
-## Resources
+```
+![my_image]({{ site.images | relative_url }}/image.jpg)
+```
 
-- [Apple Devices PSD Mockup Templates](https://www.graphicsfuel.com/2016/04/apple-devices-psd-mockup-templates/)
+## Production environment
 
-## License
+Build for production:
 
-Open sourced under the [MIT license](LICENSE.md).
+`JEKYLL_ENV=production jekyll build`

@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title> 使用免费 SSL 证书 Let&#39;s Encrypt(certbot) 搭建 Https</title><link rel="apple-touch-icon" sizes="76x76" href="/assets/images/logo.png"><link rel="icon" type="image/png" href="/assets/images/logo.png"><link rel="canonical" href="http://localhost:4000/posts/nginx-config-https/"><link rel="alternate" type="application/rss+xml" title="WngLMng" href="http://localhost:4000/feed.xml"><link href="/assets/css/fonts.googleapis.com.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="/assets/css/main.css"><meta name="keywords" content="王立明, WngLMng"><meta name="author" content="WngLMng"><meta name="description" content="Let’s Encrypt 是很火的一个免费 SSL 证书发行项目，自动化发行证书，证书有 90 天的有效期。适合个人使用或者临时使用，不用再忍受自签发证书不受浏览器信赖的提示。"><meta property="og:url" content="http://localhost:4000/posts/nginx-config-https/"><meta property="og:type" content="article"><meta property="og:title" content="使用免费 SSL 证书 Let's Encrypt(certbot) 搭建 Https"><meta property="og:description" content="使用免费 SSL 证书 Let's Encrypt(certbot) 搭建 Https"><meta property="og:site_name" content="WngLMng"><meta property="og:image" content="http://localhost:4000/assets/images/bg.svg"><body><div id="shadow"></div><header class="main-header content-wrapper"> <input type="checkbox" id="menu-checkbox" /><nav class="center-wrapper nav-main"> <a class="blog-logo" href="/">WngLMng</a> <a href="/about/">About</a> <a href="/posts/">Archive</a> <a href="/feed.xml">RSS</a> <label for="menu-checkbox" class="toggle-button" data-open="☰" data-close="☰" onclick></label></nav></header><aside class="sidebar" role="note" style="background-image: url(/assets/images/bg.svg)"><div class="cover"><div class="cover-text"><div class="heading"> <a href="/posts/#http">http</a></div><p> 使用免费 SSL 证书 Let's Encrypt(certbot) 搭建 Https</div></div><div id="switcher"></div></aside><main class="content-wrapper blog-content"><article class="post"><h1 class="post-title">使用免费 SSL 证书 Let's Encrypt(certbot) 搭建 Https</h1><p class="post-meta"> <time datetime="2016-12-25">25-12-2016</time> &nbsp;/&nbsp; <span>WngLMng</span><div class="post-content"><p>Let’s Encrypt 是很火的一个免费 SSL 证书发行项目，自动化发行证书，证书有 90 天的有效期。适合个人使用或者临时使用，不用再忍受自签发证书不受浏览器信赖的提示。<p>去年 VPS 侦探曾经说过 Let’s Encrypt 的使用教程，但是 Let’s Encrypt 已经发布了新的工具 certbot，虽然是新的工具，但是生成证书的使用方法和参数是基本一致的，证书续期更简单了。但是目前看 certbot 在一些老版本的Linux发行版上的兼容性还是有问题的，特别是在 CentOS 5 上因为 python 版本过低是无法用的，CentOS 6 上需要先安装 epel 才行，当然也有很多第三方的工具你也可以自己去尝试一下。<h2 id="配置">配置</h2><p>如果是 CentOS 6、7，先执行<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>yum <span class="nb">install </span>epel-release
+<span class="nv">$ </span><span class="nb">mkdir </span>encrypt <span class="o">&amp;&amp;</span> <span class="nb">cd </span>encrypt
+<span class="nv">$ </span>wget https://dl.eff.org/certbot-auto <span class="nt">--no-check-certificate</span>
+<span class="nv">$ </span><span class="nb">chmod</span> +x ./certbot-auto
+<span class="nv">$ </span>./certbot-auto <span class="nt">-n</span>
+</code></pre></div></div><p><strong>注意</strong> <code class="highlighter-rouge">/certbot-auto -n</code> 只是用来安装依赖包的，也可以跳过直接到下面的生成证书的步骤，国内 VPS 或服务器上使用的话建议先修改为国内的 pip 源。<h3 id="单域名生成证书">单域名生成证书</h3><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./certbot-auto certonly <span class="nt">--email</span> 79657392@qq.com <span class="nt">--agree-tos</span> <span class="nt">--webroot</span> <span class="nt">-w</span> /root/workspace/www.wnglmng.com <span class="nt">-d</span> wnglmng.com
+</code></pre></div></div><h3 id="多域名多目录生成多个证书即一次生成多个域名的多个证书">多域名多目录生成多个证书(即一次生成多个域名的多个证书)</h3><div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./certbot-auto certonly <span class="nt">--email</span> 79657392@qq.com <span class="nt">--agree-tos</span> <span class="nt">--webroot</span> <span class="nt">-w</span> /root/workspace/www.wnglmng.com <span class="nt">-d</span> wnglmng.com <span class="nt">-d</span> blog.wnglmng.com
+</code></pre></div></div><p>最后提示<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at
+   /etc/letsencrypt/live/www.wnglmng.com/fullchain.pem. Your cert will
+   expire on 2017-03-26. To obtain a new or tweaked version of this
+   certificate in the future, simply run certbot-auto again. To
+   non-interactively renew *all* of your certificates, run
+   "certbot-auto renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+</code></pre></div></div><p>就是生成成功。<p>生成的证书会存在 /etc/letsencrypt/live/www.wnglmng.com/ 目录下<p>我的项目是部署在 Nginx 下，简单配置如下<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http <span class="o">{</span>
+    <span class="c"># HTTP server</span>
+    server <span class="o">{</span>
+        listen       80<span class="p">;</span>
+        server_name  wnglmng.com<span class="p">;</span>
+
+	    location / <span class="o">{</span>
+	        rewrite ^<span class="o">(</span>.<span class="k">*</span><span class="o">)</span> https://<span class="nv">$server_name$1</span> permanent<span class="p">;</span>
+    	<span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c"># HTTPS server</span>
+    server <span class="o">{</span>
+        listen       443 ssl<span class="p">;</span>
+        server_name  wnglmng.com<span class="p">;</span>
+
+        ssl_certificate      /etc/letsencrypt/live/www.wnglmng.com/fullchain.pem<span class="p">;</span>
+        ssl_certificate_key  /etc/letsencrypt/live/www.wnglmng.com/privkey.pem<span class="p">;</span>
+
+        ssl_session_cache    shared:SSL:1m<span class="p">;</span>
+        ssl_session_timeout  5m<span class="p">;</span>
+
+        ssl_ciphers  HIGH:!aNULL:!MD5<span class="p">;</span>
+        ssl_prefer_server_ciphers  on<span class="p">;</span>
+
+        location / <span class="o">{</span>
+            root   /root/workspace/www.wnglmng.com<span class="p">;</span>
+            index  index.html index.htm<span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div><p>重新启动 Nginx <code class="highlighter-rouge">$ nginx -s reload</code><p>这就尴尬了，绿了！！！有木有！！！<p><img src="/assets/images/201612/nginx-config-https.jpg" alt="" /><h2 id="证书续期">证书续期</h2><p>cerrbot 的续期比原来的更加简单，因为证书只有90天，所以建议使用crontab进行自动续期。<p>crontab 里加上如下规则：<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 3 <span class="k">*</span>/5 <span class="k">*</span> <span class="k">*</span> /encrypt/certbot-auto renew <span class="nt">--renew-hook</span> <span class="s2">"nginx -s reload"</span>
+</code></pre></div></div><p>这样每5天就会执行一次所有域名的续期操作。当然时间也可以自行进行调整，建议别太频繁，因为他们都有请求次数的限制，如果需要强制更新可以在前面命令上加上 –force-renew 参数。<hr /><p>转自 <a href="https://www.vpser.net/build/letsencrypt-certbot.html">免费SSL证书Let’s Encrypt(certbot)安装使用教程</a><div class="post-links"> <a class="link-to-post" href="/posts/async-open-new-tab-in-brower/"> <span class="link-to-post__next">&#10535; &nbsp;Next post</span> <span class="link-to-post__title">浏览器中异步打开新标签页</span> </a> <a class="link-to-post" href="/posts/welcome-to-jekyll/"> <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span> <span class="link-to-post__title">Welcome to Jekyll!</span> </a></div></div></article></main><footer class="blog-footer content-wrapper"><p>&copy; <span class="full-year"></span> WngLMng</footer><script src="/assets/js/scripts.js"></script>
