@@ -1,15 +1,15 @@
 ---
 layout: post
 title:  "Functional Programing foundations"
-crawlertitle: "Functional Programing foundations"
+crawlertitle: "Functional Programing Foundations"
 summary: "Acquire foundational concepts of functional programming with Haskell and learn how to apply them to real world problems"
 date:   2019-06-17 04:34:04 +01000
 categories: posts
-tags: ['Functional Programming', 'Haskell']
+tags: ['Functional Programming']
 author: Cristina Verdi
 ---
 
-In this series find a summarized version of the contents presented in the [_Functional Programming with Haskell_ course by Erik Meijer](https://www.edx.org/es/course/introduction-to-functional-2) 
+In this series about Functional programming Foundations, you'll find a summarized version of the contents presented in the [_Functional Programming with Haskell_ course by Erik Meijer](https://www.edx.org/es/course/introduction-to-functional-2) 
 
 ## Overview
 Broadly speaking, functional programming is a style of programming in which the primary method of computation is the application of functions to arguments.
