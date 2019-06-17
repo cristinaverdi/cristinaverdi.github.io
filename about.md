@@ -1,14 +1,21 @@
 ---
-bg: "workbench.jpg"
+bg: "calypso-brunch-bw.jpg"
 layout: page
-title: "About"
+title: "Whoami"
 crawlertitle: "Why and how this blog was created"
 permalink: /about/
-summary: "About this blog"
+summary: "$ whoami > about.txt"
 active: about
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+# HI, I AM CRISTINA VERDI
+##### SOFTWARE CRAFTSWOMAN | PRODUCT DEVELOPER.
 
-You can find the source code for Jekyll at 
-[jekyll](https://github.com/wnglmng/wnglmng.github.io)
+##### Nonconformist at day | Rock n'Roller at night.
+
+[Linkedin](https://www.linkedin.com/in/cristina-verdi/)       [Twitter](https://twitter.com/cristina_verdi)     [Github](https://github.com/cristinaverdi)
+
+I'd love to hear from you :) 
+
+Email: cristina.verdi.tobon@gmail.com
+

@@ -7,16 +7,16 @@
 
 
 # Site settings
-title: WngLMng
-email: wnglmng@qq.com
-author: WngLMng
-keywords: "王立明, WngLMng"
-description: A coder.
+title: Cristina Verdi | Drafts & Notes
+email: cristina.verdi.tobon@gmail.com
+author: Cristina Verdi
+keywords: "Software Engineering, Technology, Product Development"
+description: A Human Being.
 baseurl: "" # the subpath of your site, e.g. /blog
-lang: "zh-cn"
-url: "https://wnglmng.com" # the base hostname & protocol for your site
-twitter_username:
-github_username: wnglmng
+lang: "es"
+url: "https://cristinaverdi.github.io" # the base hostname & protocol for your site
+twitter_username: cristina_verdi
+github_username: cristinaverdi
 disqus_username:
 
 

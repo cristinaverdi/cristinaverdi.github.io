@@ -1,14 +1,14 @@
 ---
-bg: "workbench.jpg"
+bg: "calypso-brunch-bw.jpg"
 layout: default
-crawlertitle: "WngLMng"
-title: "WngLMng"
-summary: "A Coder"
+crawlertitle: "Cristina Verdi | Drafts & Notes"
+title: "Cristina Verdi"
+summary: "Drafts and notes of a learning journey"
 ---
 
 {% for post in site.posts limit: 5 %}
   <article class="index-page">
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-    {{ post.excerpt }}
+    <p>{{ post.excerpt }}</p>
   </article>
 {% endfor %}
