@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Functional Programing foundations"
+title:  "Functional Programing Foundations"
 crawlertitle: "Functional Programing Foundations"
 summary: "Acquire foundational concepts of functional programming with Haskell and learn how to apply them to real world problems"
 date:   2019-06-17 04:34:04 +01000
