@@ -33,14 +33,11 @@ Moving to the cloud results in increased agility: factors that influence agility
 
 For example, with AWS, you can spin up servers in minutes and shut down servers when you don't need them anyomore or put them to work for a different purpose. With virtual and automatable resources you can quickly carry out comparative testing using different types of instances, storage or configurations. For example, by using AWS CloudFormation, you have access to a consistent template based environment for development, test and production purposes with increasing levels of operational control. Cloud computing allows you to expiriment quickly with low cost and low risk. 
 
-##### Elasticity
-
-Like agility, elasticity is also a powerful force in cloud computing. 
-
+#### Elasticity
 
 Elasticity is the power to scale cloud components up or down easily. Because the AWS Cloud is elastic you can quickly deploy new applications, instantly scale up as the workload grows and instantly shut down resources that are no longer required. So wheter you one computer or thousands, whether you need a computer for hours or 24/7, AWS Cloud provides and elastic infrastucture that can meet your needs. Using tools like autoscaling and load balancing, your application can automatically scale up or down based on demand. Backed by AWS infrastucture you can provide service to your users in multiple regions with lower latency.
 
-##### Reliability
+#### Reliability
 
 Reliability is the ability of a system to recover from infrastructure or service failures.
 
@@ -48,11 +45,11 @@ In cloud computing, reliability means being able to aquire computing resources t
 
 In order to achieve reliability, your architecture and systems must have a well planned foundation that handles changes on demand, detects failures and automatically heals itself.
 
-##### AWS Regions
+#### AWS Regions
 
 Reliability is a key component of the AWS Cloud, that's why AWS data centers are located all over the world in what we call AWS regions. Each regions is a geographically separated area that has multiple isolated locations know as availability zones. Availability zones consist of one or more discrete data centers whith each redundant power, networking and connectivity housed in separate facilities. So when you use AWS Cloud you can place resources like instances and data in multiple locations. That leads to reliability because if you'd host all your resources in a single location, and that location would fail, none of your resources would be available. Using availability zones let you operate production applications and databases that are highly available, fault tolerant and scalable better that what is possible with one single data center. The structure of our availability zones is intentional and tightly related to fault tolerance.
 
-###### Fault tolerance
+#### Fault tolerance
 
 Fault tolerant means a system can remain operational even if some components of that system fail.
 
