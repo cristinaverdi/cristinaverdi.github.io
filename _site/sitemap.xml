@@ -3,6 +3,15 @@
 
   
   <url>
+    <loc>https://cristinaverdi.github.io/posts/fp-haskell-intro/</loc>
+    
+      <lastmod>2019-06-17</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
     <loc>https://cristinaverdi.github.io/posts/what-is-cloud-computing/</loc>
     
       <lastmod>2019-06-16</lastmod>

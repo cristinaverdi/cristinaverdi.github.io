@@ -5,9 +5,45 @@
     <description>A Human Being.</description>
     <link>https://cristinaverdi.github.io/</link>
     <atom:link href="https://cristinaverdi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Jun 2019 03:29:41 +0200</pubDate>
-    <lastBuildDate>Mon, 17 Jun 2019 03:29:41 +0200</lastBuildDate>
+    <pubDate>Mon, 17 Jun 2019 04:35:16 +0200</pubDate>
+    <lastBuildDate>Mon, 17 Jun 2019 04:35:16 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Functional Programing foundations</title>
+        <description>&lt;p&gt;In this series find a summarized version of the contents presented in the &lt;a href=&quot;https://www.edx.org/es/course/introduction-to-functional-2&quot;&gt;&lt;em&gt;Functional Programming with Haskell&lt;/em&gt; course by Erik Meijer&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Broadly speaking, functional programming is a style of programming in which the primary method of computation is the application of functions to arguments.&lt;/p&gt;
+
+&lt;p&gt;Among other features, functional programing languages offer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A compact notation for writing programs&lt;/li&gt;
+  &lt;li&gt;Powerful abstraction methods for structuring programs&lt;/li&gt;
+  &lt;li&gt;A simple mathematical basis that supports reasoning about programs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Functional languages represent the leading edge of programming language design, and the primary setting in which new programming concepts are introduced and studied. All contemporary programming languages such as Hack/PHP, C#, Visual Basic, F#, C++, Java, Scala, Clojure, Groovy, Javascript, Python, Ruby, Racket and many others, support higher-order programming via the concept of closures or lambda expressions.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-haskell&quot;&gt;Why Haskell?&lt;/h2&gt;
+
+&lt;p&gt;While the specific language isn’t all that important, Haskell is a pure functional language so it is entirely appropriate for learning the essential ingredients for programming using mathematical functions. It is also a relatively small language, and hence it should be easy for you to get up to speed with Haskell.&lt;/p&gt;
+
+&lt;p&gt;Understanding the &lt;em&gt;Why&lt;/em&gt;, &lt;em&gt;What&lt;/em&gt;, and _How thatunderlies pure funcitonal programming will help us to “think like a fundamentalist”, so that we can apply the concepts of functional programming to “code like a hacker” in mainstream programming languages.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Jun 2019 04:34:04 +0200</pubDate>
+        <link>https://cristinaverdi.github.io/posts/fp-haskell-intro/</link>
+        <guid isPermaLink="true">https://cristinaverdi.github.io/posts/fp-haskell-intro/</guid>
+        
+        <category>Functional Programming</category>
+        
+        <category>Haskell</category>
+        
+        
+        <category>posts</category>
+        
+      </item>
     
       <item>
         <title>What is Cloud Computing?</title>
@@ -34,13 +70,11 @@ t.&lt;/p&gt;
 
 &lt;p&gt;For example, with AWS, you can spin up servers in minutes and shut down servers when you don’t need them anyomore or put them to work for a different purpose. With virtual and automatable resources you can quickly carry out comparative testing using different types of instances, storage or configurations. For example, by using AWS CloudFormation, you have access to a consistent template based environment for development, test and production purposes with increasing levels of operational control. Cloud computing allows you to expiriment quickly with low cost and low risk.&lt;/p&gt;
 
-&lt;h5 id=&quot;elasticity&quot;&gt;Elasticity&lt;/h5&gt;
-
-&lt;p&gt;Like agility, elasticity is also a powerful force in cloud computing.&lt;/p&gt;
+&lt;h4 id=&quot;elasticity&quot;&gt;Elasticity&lt;/h4&gt;
 
 &lt;p&gt;Elasticity is the power to scale cloud components up or down easily. Because the AWS Cloud is elastic you can quickly deploy new applications, instantly scale up as the workload grows and instantly shut down resources that are no longer required. So wheter you one computer or thousands, whether you need a computer for hours or 24/7, AWS Cloud provides and elastic infrastucture that can meet your needs. Using tools like autoscaling and load balancing, your application can automatically scale up or down based on demand. Backed by AWS infrastucture you can provide service to your users in multiple regions with lower latency.&lt;/p&gt;
 
-&lt;h5 id=&quot;reliability&quot;&gt;Reliability&lt;/h5&gt;
+&lt;h4 id=&quot;reliability&quot;&gt;Reliability&lt;/h4&gt;
 
 &lt;p&gt;Reliability is the ability of a system to recover from infrastructure or service failures.&lt;/p&gt;
 
@@ -48,11 +82,11 @@ t.&lt;/p&gt;
 
 &lt;p&gt;In order to achieve reliability, your architecture and systems must have a well planned foundation that handles changes on demand, detects failures and automatically heals itself.&lt;/p&gt;
 
-&lt;h5 id=&quot;aws-regions&quot;&gt;AWS Regions&lt;/h5&gt;
+&lt;h4 id=&quot;aws-regions&quot;&gt;AWS Regions&lt;/h4&gt;
 
 &lt;p&gt;Reliability is a key component of the AWS Cloud, that’s why AWS data centers are located all over the world in what we call AWS regions. Each regions is a geographically separated area that has multiple isolated locations know as availability zones. Availability zones consist of one or more discrete data centers whith each redundant power, networking and connectivity housed in separate facilities. So when you use AWS Cloud you can place resources like instances and data in multiple locations. That leads to reliability because if you’d host all your resources in a single location, and that location would fail, none of your resources would be available. Using availability zones let you operate production applications and databases that are highly available, fault tolerant and scalable better that what is possible with one single data center. The structure of our availability zones is intentional and tightly related to fault tolerance.&lt;/p&gt;
 
-&lt;h6 id=&quot;fault-tolerance&quot;&gt;Fault tolerance&lt;/h6&gt;
+&lt;h4 id=&quot;fault-tolerance&quot;&gt;Fault tolerance&lt;/h4&gt;
 
 &lt;p&gt;Fault tolerant means a system can remain operational even if some components of that system fail.&lt;/p&gt;
 
