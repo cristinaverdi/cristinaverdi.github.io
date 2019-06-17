@@ -1,10 +1,10 @@
 ---
-bg: "calypso-brunch.jpg"
+bg: "calypso-brunchbw.jpg"
 layout: page
 permalink: /posts/
-title: "Archive"
-crawlertitle: "All articles"
-summary: "Here you can find all my articles in chronological order"
+title: "All Articles"
+crawlertitle: "Browse all my articles"
+summary: "Happy learning!"
 active: archive
 ---
 
