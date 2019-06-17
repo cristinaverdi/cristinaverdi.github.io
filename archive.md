@@ -1,5 +1,5 @@
 ---
-bg: "calypso-brunchbw.jpg"
+bg: "calypso-brunch-bw.jpg"
 layout: page
 permalink: /posts/
 title: "All Articles"
