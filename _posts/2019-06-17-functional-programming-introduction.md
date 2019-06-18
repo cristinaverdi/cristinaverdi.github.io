@@ -8,7 +8,6 @@ categories: posts
 tags: ['Functional Programming']
 author: Cristina Verdi
 ---
-## Overview
 Broadly speaking, functional programming is a style of programming in which the primary method of computation is the application of functions to arguments.
 
 Among other features, functional programing languages offer:
