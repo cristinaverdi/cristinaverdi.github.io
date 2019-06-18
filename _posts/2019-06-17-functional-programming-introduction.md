@@ -30,14 +30,15 @@ Let me tell you a little bit of story. One day I was about to prepare some lunch
 
 This is exactly the kind of mindset that you have to apply at work in order to code in a functional style even if you are not using a pure functional language. At the end of the day languages are just tools that we manouver according to some fundamentals. 
 
-## Why Functional Programming now?, the Software Crisis
+## Why Functional Programming now? The Software Crisis
 
 It's not a secret that there's is an increasing interest in the industry in order to enable developers to deliver correct software, faster in order to reduce the cost of development and lead time. As developers we all know how challenging this goal can be, so the question is how can we make software in a way that we are confident of its correctness and at the same time, that we can make it fast. Well, as we can see by going through the last features of many modern languages, we can do that by incorporating functional programming concepts into this features, allowing develop to code in a functional style. Many of the end goal of this features is to allow a more concise expression and a higher level of abstraction. As we will see, all these techniques are based on [lambda calculus fundamentals](https://en.wikipedia.org/wiki/Lambda_calculus).
+
+***
 
 Join me in the next post where we will discover what a Functional Language is and will compare functional vs imperative programming and how to apply the _Functional Style_ to mainstream languages.
 
 I hope you enjoy learning the fundamentals of functional programming during this series. 
 
-###### Sources
-
-In this series about Functional programming Foundations, you'll find a summarized version of the contents presented in the [_Functional Programming with Haskell_ course by Erik Meijer](https://www.edx.org/es/course/introduction-to-functional-2) 
+##### Sources
+<span style="color:grey; font-size: 0.8em">In this series about Functional programming Foundations, you'll find a summarized version of the contents presented in the [_Functional Programming with Haskell_ course by Erik Meijer](https://www.edx.org/es/course/introduction-to-functional-2)</span>
