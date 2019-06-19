@@ -30,9 +30,13 @@ Let me tell you a little bit of story. One day I was about to prepare some lunch
 
 This is exactly the kind of mindset that you have to apply at work in order to code in a functional style even if you are not using a pure functional language. At the end of the day languages are just tools that we manouver according to some fundamentals. 
 
-## Why Functional Programming now? The Software Crisis
+## Why Functional Programming matters? The Software Crisis
 
-It's not a secret that there's is an increasing interest in the industry in order to enable developers to deliver correct software, faster in order to reduce the cost of development and lead time. As developers we all know how challenging this goal can be, so the question is how can we make software in a way that we are confident of its correctness and at the same time, that we can make it fast. Well, as we can see by going through the last features of many modern languages, we can do that by incorporating functional programming concepts into this features, allowing develop to code in a functional style. Many of the end goal of this features is to allow a more concise expression and a higher level of abstraction. As we will see, all these techniques are based on [lambda calculus fundamentals](https://en.wikipedia.org/wiki/Lambda_calculusk.
+It's not a secret that there's is an increasing interest in the industry in order to enable developers to deliver correct software, faster in order to reduce the cost of development and lead time. As developers we all know how challenging this goal can be, so the question is how can we make software in a way that we are confident of its correctness and at the same time, that we can make it fast. Well, as we can see by going through the last features of many modern languages, we can do that by incorporating functional programming concepts into this features, allowing develop to code in a functional style. Many of the end goal of this features is to allow a more concise expression and a higher level of abstraction. As we will see, all these techniques are based on [lambda calculus fundamentals](https://en.wikipedia.org/wiki/Lambda_calculus.
+
+Moreover, John Huges in his paper _Why functional programming matters_ states that 'as software becomes more and more complex, it becomes crutial to structure it well. Well structured software, is easy to debug, and provides a collection of modules that can be re-used to reduce future programming costs'. Hughes exposes two features of functional languages that push back the limits that conventional languages impose over modularisation: Higher Order Funtions and Lazy evaluation. 
+
+We will talk about these topics in the next posts.
 
 <br/>
 
