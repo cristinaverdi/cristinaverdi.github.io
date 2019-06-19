@@ -49,4 +49,11 @@ Join me in the next post where we will discover what a Functional Language is an
 I hope you enjoy learning the fundamentals of functional programming during this series. 
 
 ##### Sources
-<span style="color:grey; font-size: 0.8em">In this series about Functional programming Foundations, you'll find a summarized version of the contents presented in the [_Functional Programming with Haskell_ course by Erik Meijer](https://www.edx.org/es/course/introduction-to-functional-2)</span>
+<span style="color:grey; font-size: 0.8em">
+    <ol>
+        <li>
+        In this series about Functional programming Foundations, you'll find a summarized version of the contents presented in the [_Functional Programming with Haskell_ course by Erik Meijer](https://www.edx.org/es/course/introduction-to-functional-2)
+        </li>
+        <li>_Why functional programming matters_, John Huges, 1984</li>
+    </ol>
+</span>
