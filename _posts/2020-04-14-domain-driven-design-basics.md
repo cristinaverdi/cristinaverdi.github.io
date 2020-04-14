@@ -9,10 +9,6 @@ tags: ['Doman Driven Design', 'DDD', 'Software Design']
 author: Cristina Verdi
 ---
 
-# Domain Driven Design Basics:
-
-## DDD
-
 #### Domain
 
 A domain is a sphere of knowledge or activity
