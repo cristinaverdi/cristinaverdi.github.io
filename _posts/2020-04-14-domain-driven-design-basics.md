@@ -5,7 +5,7 @@ crawlertitle: "Domain Driven Design Basics"
 summary: "Understand what DDD is about. Grasp the fundamentals easily"
 date:   2020-04-14 22:45:04 +01000
 categories: posts
-tags: ['Doman Driven Design', 'DDD', 'Software Design']
+tags: ['DDD', 'Software Design']
 author: Cristina Verdi
 ---
 
