@@ -9,6 +9,8 @@ tags: ['DDD', 'Software Design']
 author: Cristina Verdi
 ---
 
+Understand what DDD is about. Grasp the fundamentals easily
+
 #### Domain
 
 A domain is a sphere of knowledge or activity
