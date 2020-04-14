@@ -14,7 +14,7 @@ keywords: "Software Engineering, Technology, Product Development"
 description: A Human Being.
 baseurl: "" # the subpath of your site, e.g. /blog
 lang: "es"
-url: "https://cristinaverdi.github.io" # the base hostname & protocol for your site
+url: "https://cristinaverdi.notes-of-a-learning-journey.github.io" # the base hostname & protocol for your site
 twitter_username: cristina_verdi
 github_username: cristinaverdi
 disqus_username:
