@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "An ntroduction to git"
+title:  "Exprimiendo Git: Introducción"
 crawlertitle: "An introduction to git"
-summary: "Boost your development workflow understanding Git fundamentals"
+summary: "Exprime tu flujo de trabajo entendiendo Git desde los fundamentos"
 date:   2020-04-14 22:45:04 +01000
 categories: posts
-tags: ['Git', 'Development workflow', 'team work']
+tags: ['Git', 'flujo de trabajo', 'trabajo en equipo']
 author: Cristina Verdi
 ---
 
@@ -24,7 +24,7 @@ Esto nos ayuda a:
 Para poner las cosas en perspectiva, repasemos diferentes tipos de sistemas de control de versiones.
 
 #### Sistema de Control de Versiones en local
-![Sistemas de Control de Versiones en local](../assets/images/20201804/SCV en local.jpg)
+![Sistemas de Control de Versiones en local](../assets/images/20201804/scv-en-local.jpg)
 ### Entonces, ¿qué es Git?
 
 En pocas palabras, Git es un sistema de control de versiones distribuído. Esto quiere decir que, Git guarda una copia del repositorio cada ordenador que lo haya descargado en vez de una única copia en un servidor central.
