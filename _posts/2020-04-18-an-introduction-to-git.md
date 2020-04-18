@@ -24,8 +24,7 @@ Esto nos ayuda a:
 Para poner las cosas en perspectiva, repasemos diferentes tipos de sistemas de control de versiones.
 
 #### Sistema de Control de Versiones en local
-[![Sistemas de Control de Versiones en local](../assets/images/20201804/SCV en local.jpg)]()
-
+![Sistemas de Control de Versiones en local](../assets/images/20201804/SCV en local.jpg)
 ### Entonces, ¿qué es Git?
 
 En pocas palabras, Git es un sistema de control de versiones distribuído. Esto quiere decir que, Git guarda una copia del repositorio cada ordenador que lo haya descargado en vez de una única copia en un servidor central.
