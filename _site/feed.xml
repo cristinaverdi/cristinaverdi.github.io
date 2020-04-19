@@ -3,11 +3,161 @@
   <channel>
     <title>Cristina Verdi | Drafts &amp; Notes</title>
     <description>A Human Being.</description>
-    <link>https://cristinaverdi.github.io/</link>
-    <atom:link href="https://cristinaverdi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Jun 2019 19:01:09 +0200</pubDate>
-    <lastBuildDate>Tue, 18 Jun 2019 19:01:09 +0200</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 19 Apr 2020 21:10:00 +0200</pubDate>
+    <lastBuildDate>Sun, 19 Apr 2020 21:10:00 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Exprimiendo Git: ¿Qué es un sistema de control de versiones?</title>
+        <description>&lt;p&gt;¿Alguna vez te has preguntado cuál es la diferencia entre &lt;code class=&quot;highlighter-rouge&quot;&gt;git revert&lt;/code&gt; y   &lt;code class=&quot;highlighter-rouge&quot;&gt;git reset --hard&lt;/code&gt;? ¿No sueles usar &lt;code class=&quot;highlighter-rouge&quot;&gt;git rebase&lt;/code&gt; por miedo a lo que pueda pasar? Espero que esta serie de posts te ayude a repasar los fundamentos de Git y así adquirir seguidad y exprimir al máximo tu flujo de trabajo.&lt;/p&gt;
+
+&lt;p&gt;Git es una herramienta para el control de versiones. Empecemos por repasar qué es un control de versiones y por qué son importantes en los proyectos de software.&lt;/p&gt;
+
+&lt;h3 id=&quot;control-de-versiones-en-los-proyectos-de-software&quot;&gt;Control de versiones en los proyectos de Software&lt;/h3&gt;
+
+&lt;p&gt;El control de versiones es el arte de manejar cambios en la información. Ha sido desde siempre una herramienta crítica para los programadores ya que construir software es un proceso creativo que implica evolucionar con el tiempo el código fuente sobre el que se está trabajando. Es más, en la gran mayoría de casos, múltiples personas trabajan en un mismo proyecto al mismo tiempo. Es decir se van añadiendo en paralelo líneas y ficheros aquí, eliminando otras allá… A veces, incluso puede haber dos programadores trabajando al mismo tienpo en un fichero. Todo esto hace que se generen múltiples versiones de un proyecto en un mismo instante de tiempo, pero al final, el producto es sólo uno y queremos controlar qué aportaciones de las que ha ido haciendo cada miembro del equipo van a componer esta versión final. Como puedes ver se necesita un buen sistema para manejar el caos potencial.&lt;/p&gt;
+
+&lt;p&gt;Un sistema de control de versiones nos ayuda a mantener la consistencia de los datos a lo largo del tiempo, generando un historial que nos ayuda a:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Encontrar en qué momento se ha introducido un error y con qué cambio,&lt;/li&gt;
+  &lt;li&gt;Recuperar una idea previamente descartada&lt;/li&gt;
+  &lt;li&gt;Comparar versiones diferentes de los ficheros de un proyecto&lt;/li&gt;
+  &lt;li&gt;Obtener una copia de seguridad en caso de que hayamos perdido&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para poner las cosas en perspectiva, repasemos diferentes tipos de sistemas de control de versiones.&lt;/p&gt;
+
+&lt;h4 id=&quot;sistema-de-control-de-versiones-en-local&quot;&gt;Sistema de Control de Versiones en local&lt;/h4&gt;
+
+&lt;p&gt;Un manera muy simple de mantener un control de versiones de nuestros ficheros sería copiándolos en otro directorio poniendo, en el mejor de los casos una fecha que indicaría de cuando es la versión. Como es evidente,
+este enfoque aunque simple, puede dar lugar a muchos fallos.&lt;/p&gt;
+
+&lt;p&gt;Los &lt;em&gt;sistemas de control de versiones en local&lt;/em&gt; surgieron precisamente para atajar este problema.
+&lt;a href=&quot;https://www.gnu.org/software/rcs/&quot;&gt;RCS&lt;/a&gt; es un ejemplo. Este programa gestiona revisiones de documentos de texto automatizando el almacenamiento, recuperación de ficheros, registro de actividad e identificación de revisiones.&lt;/p&gt;
+
+&lt;p&gt;En definitiva, RCS gestiona &lt;em&gt;grupos de revisión&lt;/em&gt;; es decir, un conjunto de documentos de texto llamados &lt;em&gt;revisiones&lt;/em&gt; que han ido evolucionando a partir de ellas mismas al modificar un fichero.
+Se crea una revisión editando una revisión existente. Además, RCS organiza las revisiones en un árbol ancestral en el que la raíz es la primirea revisión y las ramas indican la revisión a partir de la que ha evolucionado una nueva.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/20201804/scv-en-local.jpg&quot; alt=&quot;Sistemas de Control de Versiones en local&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;sistema-de-control-de-versiones-centralizado&quot;&gt;Sistema de Control de Versiones centralizado&lt;/h4&gt;
+&lt;p&gt;Cuando necesitas trabajar de manera colaborativa en equipo, un sistema como el anterior no es adecuado ya que no permite gestionar las diferentes versiones entre diferentes ordenadores. Para solucionar esto llegaron los sistemas de control de versiones centralizados que permiten a los programadores acceder al proyecto a través de la red.&lt;/p&gt;
+
+&lt;p&gt;Estos sistemas alojan archivos y directorios en un repositorio central que sirve como único punto de almacenamiento y sincronización de datos.&lt;/p&gt;
+
+&lt;p&gt;Igual que en el caso anterior, el repositorio organiza la información siguiendo una estructura de árbol, estableciendo así una jerarquía de ficheros y directorios.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, múltiples clientes puden conectarse al repositorio y hacer operaciones de lectura y escritura sobre sus archivos. Una operación de escritura, pone a disposición de otros clientes esta información; mediante una operación de lectura un cliente recibe información de los demás.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/20201804/sistema-cliente-servidor.png&quot; alt=&quot;Sistemas cliente-servidor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hasta ahora, esto se parece mucho a la definición de un simple servidor de ficheros, y lo cierto es que el repositorio &lt;em&gt;es&lt;/em&gt; un tipo de servidor de ficheros pero con esteroides ya que además, &lt;em&gt;recuerda cada cambio registrado&lt;/em&gt; en él: cambios en los ficheros, cambios en la estructura del árbol de directorios, etc.&lt;/p&gt;
+
+&lt;p&gt;Cuando un cliente &lt;em&gt;lee&lt;/em&gt; datos del repositorio, normalmente ve únicamente la &lt;em&gt;última versión&lt;/em&gt; del árbol de directorios pero también tiene la posibilidad de ver los &lt;em&gt;estados previos&lt;/em&gt; del sistema. Se puede por tanto hacer preguntas del tipo, ¿qué contenía este directorio el viernes pasado? o ¿quién a sido la última persona en modificar este archivo?&lt;/p&gt;
+
+&lt;p&gt;Para ponernos en contexto, veamos cómo funciona Subversion, sistema de control de versiones, muy popular durante las últimas dos décadas antes de Git.&lt;/p&gt;
+
+&lt;p&gt;Para trabajar de manera colaborativa, Subversion permite crear &lt;strong&gt;working copies&lt;/strong&gt; - o copias de trabajo -  que normalmente son un rama del árbol completo de ficheros que nos hemos descargado desde el repositorio central en nuestro sistema local. Una vez hecho esto, podemos modificar cualquier fichero o carpeta sin peligro de interferir con los demás. Subversión hará públicos para el resto de clientes nuestros cambios únicamente cuando lo digamos de manera explícita y entonces nuestro cambios se &lt;em&gt;escribirán&lt;/em&gt; en el repositorio central.&lt;/p&gt;
+
+&lt;p&gt;Si otras personas publican sus cambios, Subversion nos ayuda a &lt;em&gt;integrar&lt;/em&gt; estos cambios en nuestra copia de trabajo siguiendo un modelo &lt;em&gt;copiar-modificar-mergear&lt;/em&gt; (copy-modify-merge).&lt;/p&gt;
+
+&lt;p&gt;Por otra parte, una copia de trabajo contiene un subdirectorio, comocido como el &lt;em&gt;directorio administrativo&lt;/em&gt; de la copia de trabajo que ayudan a Subversion a reconocer qué archivos contienen cambios no publicados y qué archivos están desactualizados con respecto al trabajo de otros.&lt;/p&gt;
+
+&lt;p&gt;Para entender una de las principales diferencias entre Git y un sistema centralizado como Subversion, hay que destacar que &lt;strong&gt;un repositorio típico de subversion a menudo contiene los archivos para varios proyectos&lt;/strong&gt;, generalmente &lt;strong&gt;cada proyecto es un subdirectorio&lt;/strong&gt; en el sistema de archivos del repositorio. Es esta organización, &lt;em&gt;una copia de trabajo&lt;/em&gt; normalmente corresponderá a &lt;strong&gt;un surbárbol concreto&lt;/strong&gt; del respositorio.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, en la figura de abajo tenemos representado el árbol de directorios de un repositorio central de subversion que gestiona dos proyectos: la rama gatitos y  la rama perritos, con sus respectivas subcarpetas que contendrían ficheros con código para representar las actividades típicas de un gato o un perro.&lt;/p&gt;
+
+&lt;p&gt;Si creáramos una &lt;em&gt;working copy&lt;/em&gt; del repositorio para trabajar en el proyecto gatitos, el repositorio central nos crearía únicamente una copia del subárbol “gatitos”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/20201804/gatitos-y-perritos.gif&quot; alt=&quot;Sistemas cliente-servidor&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 14 Apr 2020 22:45:04 +0200</pubDate>
+        <link>http://localhost:4000/posts/git-sistemas-de-control-de-versiones/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/git-sistemas-de-control-de-versiones/</guid>
+        
+        <category>Git</category>
+        
+        <category>Control de versiones</category>
+        
+        <category>Trabajo en equipo</category>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>Domain Driven Design Basics</title>
+        <description>&lt;p&gt;Understand what DDD is about. Grasp the fundamentals easily&lt;/p&gt;
+
+&lt;h4 id=&quot;domain&quot;&gt;Domain&lt;/h4&gt;
+
+&lt;p&gt;A domain is a sphere of knowledge or activity&lt;/p&gt;
+
+&lt;h4 id=&quot;model&quot;&gt;Model:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A system of abstractions representing selected aspects of a domain&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A model distills knowledge and assumptions about a domain&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Some models are good for some problems, the same model can be innapropriate for other solution&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;During development, represent multiple models, from multiple problems and transform data back and forth.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As a team, extract meaningful concepts&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ubiquitous-language-how-we-talk-about-a-problem-is-fundamental-to-find-a-good-solution&quot;&gt;Ubiquitous language: How we talk about a problem is fundamental to find a good solution.&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UL is a language structured around the domain model and used by all team members to connect all the activities of the team with the software… within a bounded context.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;why-model&quot;&gt;Why model?&lt;/h4&gt;
+
+&lt;p&gt;The critical complexity of many software projects is in understanding the domain itself.&lt;/p&gt;
+
+&lt;p&gt;Having a model doesn’t gives any advantadge as such. The advantadge comes from having a model that fits very nicely with the specific set of problems that you are trying to solve in that context&lt;/p&gt;
+
+&lt;h4 id=&quot;a-strategic-design-decision&quot;&gt;A Strategic Design Decision&lt;/h4&gt;
+
+&lt;p&gt;An example: allow front-end team to get a list of all vehicles in order to represent them as a search result.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Refactor&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;New subsystem&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Force the new functionality into the existing model&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 14 Apr 2020 22:45:04 +0200</pubDate>
+        <link>http://localhost:4000/posts/domain-driven-design-basics/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/domain-driven-design-basics/</guid>
+        
+        <category>DDD</category>
+        
+        <category>Software Design</category>
+        
+        
+        <category>posts</category>
+        
+      </item>
     
       <item>
         <title>Functional Programing Foundations: Introduction</title>
@@ -35,22 +185,37 @@
 
 &lt;p&gt;This is exactly the kind of mindset that you have to apply at work in order to code in a functional style even if you are not using a pure functional language. At the end of the day languages are just tools that we manouver according to some fundamentals.&lt;/p&gt;
 
-&lt;h2 id=&quot;why-functional-programming-now-the-software-crisis&quot;&gt;Why Functional Programming now? The Software Crisis&lt;/h2&gt;
+&lt;h2 id=&quot;why-functional-programming-matters-the-software-crisis&quot;&gt;Why Functional Programming matters? The Software Crisis&lt;/h2&gt;
 
-&lt;p&gt;It’s not a secret that there’s is an increasing interest in the industry in order to enable developers to deliver correct software, faster in order to reduce the cost of development and lead time. As developers we all know how challenging this goal can be, so the question is how can we make software in a way that we are confident of its correctness and at the same time, that we can make it fast. Well, as we can see by going through the last features of many modern languages, we can do that by incorporating functional programming concepts into this features, allowing develop to code in a functional style. Many of the end goal of this features is to allow a more concise expression and a higher level of abstraction. As we will see, all these techniques are based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Lambda_calculus&quot;&gt;lambda calculus fundamentals&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It’s not a secret that there’s is an increasing interest in the industry in order to enable developers to deliver correct software, faster in order to reduce the cost of development and lead time. As developers we all know how challenging this goal can be, so the question is how can we make software in a way that we are confident of its correctness and at the same time, that we can make it fast. Well, as we can see by going through the last features of many modern languages, we can do that by incorporating functional programming concepts into this features, allowing develop to code in a functional style. Many of the end goal of this features is to allow a more concise expression and a higher level of abstraction. As we will see, all these techniques are based on [lambda calculus fundamentals](https://en.wikipedia.org/wiki/Lambda_calculus.&lt;/p&gt;
+
+&lt;p&gt;Moreover, John Huges in his paper &lt;em&gt;Why functional programming matters&lt;/em&gt; states that ‘as software becomes more and more complex, it becomes crutial to structure it well. Well structured software, is easy to debug, and provides a collection of modules that can be re-used to reduce future programming costs’. Hughes exposes two features of functional languages that push back the limits that conventional languages impose over modularisation: Higher Order Funtions and Lazy evaluation.&lt;/p&gt;
+
+&lt;p&gt;We will talk about these topics in the next posts.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Join me in the next post where we will discover what a Functional Language is and will compare functional vs imperative programming and how to apply the &lt;em&gt;Functional Style&lt;/em&gt; to mainstream languages.&lt;/p&gt;
 
 &lt;p&gt;I hope you enjoy learning the fundamentals of functional programming during this series.&lt;/p&gt;
 
 &lt;h5 id=&quot;sources&quot;&gt;Sources&lt;/h5&gt;
-&lt;p&gt;&lt;span style=&quot;color:grey; font-size: 0.8em&quot;&gt;In this series about Functional programming Foundations, you’ll find a summarized version of the contents presented in the &lt;a href=&quot;https://www.edx.org/es/course/introduction-to-functional-2&quot;&gt;&lt;em&gt;Functional Programming with Haskell&lt;/em&gt; course by Erik Meijer&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:grey; font-size: 0.8em&quot;&gt;
+    &amp;lt;ol&amp;gt;
+        &amp;lt;li&amp;gt;
+        In this series about Functional programming Foundations, you’ll find a summarized version of the contents presented in the &lt;a href=&quot;https://www.edx.org/es/course/introduction-to-functional-2&quot;&gt;&lt;em&gt;Functional Programming with Haskell&lt;/em&gt; course by Erik Meijer&lt;/a&gt;
+        &amp;lt;/li&amp;gt;
+        &amp;lt;li&amp;gt;&lt;em&gt;Why functional programming matters&lt;/em&gt;, John Huges, 1984&amp;lt;/li&amp;gt;
+    &amp;lt;/ol&amp;gt;
+&lt;/span&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 Jun 2019 04:34:04 +0200</pubDate>
-        <link>https://cristinaverdi.github.io/posts/functional-programming-introduction/</link>
-        <guid isPermaLink="true">https://cristinaverdi.github.io/posts/functional-programming-introduction/</guid>
+        <link>http://localhost:4000/posts/functional-programming-introduction/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/functional-programming-introduction/</guid>
         
         <category>Functional Programming</category>
         
@@ -109,8 +274,8 @@ t.&lt;/p&gt;
 &lt;p&gt;High availability ensures that your systems are always funtioning and accesible and that downtime is minimized as much as possible without the need for human intervention.&lt;/p&gt;
 </description>
         <pubDate>Sun, 16 Jun 2019 01:53:04 +0200</pubDate>
-        <link>https://cristinaverdi.github.io/posts/what-is-cloud-computing/</link>
-        <guid isPermaLink="true">https://cristinaverdi.github.io/posts/what-is-cloud-computing/</guid>
+        <link>http://localhost:4000/posts/what-is-cloud-computing/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/what-is-cloud-computing/</guid>
         
         <category>Cloud Computing</category>
         
