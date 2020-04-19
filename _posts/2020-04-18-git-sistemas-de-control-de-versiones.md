@@ -55,11 +55,12 @@ Hasta ahora, esto se parece mucho a la definición de un simple servidor de fich
 
 Cuando un cliente *lee* datos del repositorio, normalmente ve únicamente la *última versión* del árbol de directorios pero también tiene la posibilidad de ver los *estados previos* del sistema. Se puede por tanto hacer preguntas del tipo, ¿qué contenía este directorio el viernes pasado? o ¿quién a sido la última persona en modificar este archivo?
 
-Para ponernos en contexto, veamos cómo funciona Subversion, sistema de control de versiones, muy popular durante las últimas dos décadas antes de Git.
+Para ponernos en contexto, veamos cómo funciona Subversion, un sistema de control de versiones, muy popular durante las últimas dos décadas antes de Git.
 
-Para trabajar de manera colaborativa, Subversion permite crear **working copies** - o copias de trabajo -  que normalmente son un rama del árbol completo de ficheros que nos hemos descargado desde el repositorio central en nuestro sistema local. Una vez hecho esto, podemos modificar cualquier fichero o carpeta sin peligro de interferir con los demás. Subversión hará públicos para el resto de clientes nuestros cambios únicamente cuando lo digamos de manera explícita y entonces nuestro cambios se *escribirán* en el repositorio central. 
+Para trabajar de manera colaborativa, Subversion permite crear **working copies** - o copias de trabajo -  que normalmente son un rama del árbol completo de ficheros que nos hemos descargado desde el repositorio central en nuestro sistema local.
+Una vez hecho esto, podemos modificar cualquier fichero o carpeta sin peligro de interferir con los demás. Subversión hará públicos para el resto de clientes nuestros cambios únicamente cuando  lo ordenemos de manera explícita y así nuestros cambios se *escribirán* en el repositorio central.
 
-Si otras personas publican sus cambios, Subversion nos ayuda a *integrar* estos cambios en nuestra copia de trabajo siguiendo un modelo *copiar-modificar-mergear* (copy-modify-merge).
+Si otras personas publican sus cambios, Subversion nos ayuda a *integrar* estos cambios en nuestra copia de trabajo siguiendo el modelo *copiar-modificar-mergear* (copy-modify-merge).
 
 Por otra parte, una copia de trabajo contiene un subdirectorio, comocido como el *directorio administrativo* de la copia de trabajo que ayudan a Subversion a reconocer qué archivos contienen cambios no publicados y qué archivos están desactualizados con respecto al trabajo de otros.
 
