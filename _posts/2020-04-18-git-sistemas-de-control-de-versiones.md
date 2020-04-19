@@ -10,7 +10,7 @@ tags: ['Git','Control de versiones','Trabajo en equipo']
 author: Cristina Verdi
 ---
 
-¿Alguna vez te has preguntado cuál es la diferencia entre `git revert` y  `git reset --hard`? ¿No sueles usar `git rebase` por miedo a lo que pueda pasar? Espero que esta serie de posts te ayude a repasar los fundamentos de Git y así adquirir seguidad y exprimir al máximo tu flujo de trabajo.
+¿Alguna vez te has preguntado cuál es la diferencia entre `git revert` y   `git reset --hard`? ¿No sueles usar `git rebase` por miedo a lo que pueda pasar? Espero que esta serie de posts te ayude a repasar los fundamentos de Git y así adquirir seguidad y exprimir al máximo tu flujo de trabajo.
 
 Git es una herramienta para el control de versiones. Empecemos por repasar qué es un control de versiones y por qué son importantes en los proyectos de software.
 
